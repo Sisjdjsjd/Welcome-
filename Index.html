@@ -1,265 +1,334 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Islamic Course Registration</title>  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Islamic Course Registration</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
     }
 
-    body {
-      background: #04010d;
-      color: white;
-      overflow-x: hidden;
+    body{
+      background:#04010d;
+      color:white;
+      overflow-x:hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      background: #7c3aed;
-      filter: blur(180px);
-      top: -100px;
-      left: -100px;
-      opacity: 0.4;
-      z-index: -1;
+    body::before{
+      content:"";
+      position:fixed;
+      width:400px;
+      height:400px;
+      background:#7c3aed;
+      filter:blur(180px);
+      top:-100px;
+      left:-100px;
+      opacity:0.4;
+      z-index:-1;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      width: 350px;
-      height: 350px;
-      background: #9333ea;
-      filter: blur(180px);
-      bottom: -100px;
-      right: -100px;
-      opacity: 0.3;
-      z-index: -1;
+    body::after{
+      content:"";
+      position:fixed;
+      width:350px;
+      height:350px;
+      background:#9333ea;
+      filter:blur(180px);
+      bottom:-100px;
+      right:-100px;
+      opacity:0.3;
+      z-index:-1;
     }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 30px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      background: rgba(4,1,13,0.7);
-      z-index: 1000;
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 30px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(10px);
+      position:sticky;
+      top:0;
+      background:rgba(4,1,13,0.7);
+      z-index:1000;
     }
 
-    .logo {
-      font-size: 32px;
-      font-weight: bold;
+    .logo{
+      font-size:30px;
+      font-weight:bold;
     }
 
-    .logo span {
-      color: #a855f7;
+    .logo span{
+      color:#a855f7;
     }
 
-    .hero {
-      text-align: center;
-      padding: 90px 20px 50px;
+    .hero{
+      text-align:center;
+      padding:90px 20px 50px;
     }
 
-    .tag {
-      display: inline-block;
-      background: linear-gradient(to right, #7c3aed, #a855f7);
-      padding: 12px 25px;
-      border-radius: 50px;
-      font-size: 14px;
-      margin-bottom: 30px;
-      box-shadow: 0 0 25px rgba(168,85,247,0.5);
+    .tag{
+      display:inline-block;
+      background:linear-gradient(to right,#7c3aed,#a855f7);
+      padding:12px 25px;
+      border-radius:50px;
+      font-size:14px;
+      margin-bottom:30px;
+      box-shadow:0 0 25px rgba(168,85,247,0.5);
     }
 
-    .hero h1 {
-      font-size: 65px;
-      font-weight: 800;
-      line-height: 1.2;
-      max-width: 900px;
-      margin: auto;
+    .hero h1{
+      font-size:65px;
+      font-weight:800;
+      line-height:1.2;
+      max-width:900px;
+      margin:auto;
     }
 
-    .hero h1 span {
-      color: #a855f7;
+    .hero h1 span{
+      color:#a855f7;
     }
 
-    .hero p {
-      color: #b3b3b3;
-      margin-top: 25px;
-      font-size: 20px;
-      line-height: 1.7;
+    .hero p{
+      color:#b3b3b3;
+      margin-top:25px;
+      font-size:20px;
+      line-height:1.7;
     }
 
-    .form-section {
-      display: flex;
-      justify-content: center;
-      padding: 30px 20px 100px;
+    .form-section{
+      display:flex;
+      justify-content:center;
+      padding:30px 20px 100px;
     }
 
-    .form-box {
-      width: 100%;
-      max-width: 700px;
-      background: rgba(15, 8, 30, 0.9);
-      border: 1px solid rgba(168,85,247,0.3);
-      border-radius: 35px;
-      padding: 40px;
-      backdrop-filter: blur(20px);
-      box-shadow: 0 0 50px rgba(168,85,247,0.15);
+    .form-box{
+      width:100%;
+      max-width:700px;
+      background:rgba(15,8,30,0.9);
+      border:1px solid rgba(168,85,247,0.3);
+      border-radius:35px;
+      padding:40px;
+      backdrop-filter:blur(20px);
+      box-shadow:0 0 50px rgba(168,85,247,0.15);
     }
 
-    .form-box h2 {
-      text-align: center;
-      margin-bottom: 35px;
-      font-size: 38px;
+    .form-box h2{
+      text-align:center;
+      margin-bottom:35px;
+      font-size:38px;
     }
 
-    .input-box {
-      margin-bottom: 22px;
+    .input-box{
+      margin-bottom:22px;
+    }
+
+    .input-box label{
+      display:block;
+      margin-bottom:10px;
+      color:#d1d5db;
+      font-size:15px;
     }
 
     .input-box input,
-    .input-box select {
-      width: 100%;
-      padding: 18px 20px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      color: white;
-      font-size: 16px;
-      outline: none;
-      transition: 0.3s;
+    .input-box select{
+      width:100%;
+      padding:18px 20px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;
+      color:white;
+      font-size:16px;
+      outline:none;
+      transition:0.3s;
     }
 
     .input-box input:focus,
-    .input-box select:focus {
-      border-color: #a855f7;
-      box-shadow: 0 0 15px rgba(168,85,247,0.4);
+    .input-box select:focus{
+      border-color:#a855f7;
+      box-shadow:0 0 15px rgba(168,85,247,0.4);
     }
 
-    .input-box select {
-      color: #d1d1d1;
+    input[type="date"]{
+      color:#d1d5db;
     }
 
-    .submit-btn {
-      width: 100%;
-      padding: 18px;
-      border: none;
-      border-radius: 18px;
-      background: linear-gradient(to right, #7c3aed, #a855f7);
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 0 30px rgba(168,85,247,0.4);
+    option{
+      background:#0f081e;
+      color:white;
     }
 
-    .submit-btn:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 0 40px rgba(168,85,247,0.6);
+    .submit-btn{
+      width:100%;
+      padding:18px;
+      border:none;
+      border-radius:18px;
+      background:linear-gradient(to right,#7c3aed,#a855f7);
+      color:white;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 0 30px rgba(168,85,247,0.4);
     }
 
-    .footer {
-      text-align: center;
-      padding: 35px 20px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      color: #9ca3af;
+    .submit-btn:hover{
+      transform:translateY(-3px) scale(1.01);
+      box-shadow:0 0 40px rgba(168,85,247,0.6);
     }
 
-    .footer span {
-      color: #a855f7;
-      font-weight: bold;
+    .footer{
+      text-align:center;
+      padding:35px 20px;
+      border-top:1px solid rgba(255,255,255,0.06);
+      color:#9ca3af;
     }
 
-    @media(max-width: 768px) {
-      .hero h1 {
-        font-size: 42px;
+    .footer span{
+      color:#a855f7;
+      font-weight:bold;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:42px;
       }
 
-      .hero p {
-        font-size: 16px;
+      .hero p{
+        font-size:16px;
       }
 
-      .form-box {
-        padding: 25px;
+      .form-box{
+        padding:25px;
       }
 
-      .form-box h2 {
-        font-size: 30px;
+      .form-box h2{
+        font-size:30px;
       }
+
     }
-  </style></head>
-<body>  <nav class="navbar">
-    <div class="logo">Wel<span>come</span></div>
-  </nav>  <section class="hero">
-    <div class="tag">✨ Online Islamic Course Registration</div><h1>
-  Register For <span>Islamic Courses</span>
-</h1>
 
-<p>
-  Fill the registration form below and submit directly on WhatsApp.
-</p>
+  </style>
+</head>
 
-  </section>  <section class="form-section">
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      Imam Ahmad <span>Raza Academy</span>
+    </div>
+  </nav>
+
+  <section class="hero">
+
+    <div class="tag">
+      ✨ Online Islamic Course Registration
+    </div>
+
+    <h1>
+      Register For <span>Islamic Courses</span>
+    </h1>
+
+    <p>
+      Fill the registration form below and submit directly on WhatsApp.
+    </p>
+
+  </section>
+
+  <section class="form-section">
+
     <div class="form-box">
-      <h2>Registration Form</h2><form id="registrationForm">
 
-    <div class="input-box">
-      <input type="text" id="name" placeholder="Full Name" required>
+      <h2>Registration Form</h2>
+
+      <form id="registrationForm">
+
+        <div class="input-box">
+          <input type="text" id="name" placeholder="Full Name" required>
+        </div>
+
+        <div class="input-box">
+          <label>
+            What Is Your Date Of Birth?
+          </label>
+
+          <input type="date" id="dob" required>
+        </div>
+
+        <div class="input-box">
+          <input type="text" id="city" placeholder="City" required>
+        </div>
+
+        <div class="input-box">
+          <input type="text" id="state" placeholder="State" required>
+        </div>
+
+        <div class="input-box">
+          <input type="tel" id="mobile" placeholder="Mobile Number" required>
+        </div>
+
+        <div class="input-box">
+
+          <select id="course" required>
+
+            <option value="">
+              Which Course Do You Want?
+            </option>
+
+            <option>
+              Usool-e-Hadees Course
+            </option>
+
+            <option>
+              Seerat-un-Nabi Course
+            </option>
+
+            <option>
+              Tajweed Course
+            </option>
+
+            <option>
+              Bahar e Shariat Course
+            </option>
+
+            <option>
+              Alim / Alima Course
+            </option>
+
+            <option>
+              Arabic Course
+            </option>
+
+          </select>
+
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Submit On WhatsApp
+        </button>
+
+      </form>
+
     </div>
 
-    <div class="input-box">
-      <div class="input-box">
-      <label style="display:block; margin-bottom:10px; color:#d1d5db; font-size:15px;">
-        What Is Your Date Of Birth?
-      </label>
-      <input type="date" id="dob" required>
-    </div>
-    </div>
+  </section>
 
-    <div class="input-box">
-      <input type="text" id="city" placeholder="City" required>
-    </div>
-
-    <div class="input-box">
-      <input type="text" id="state" placeholder="State" required>
-    </div>
-
-    <div class="input-box">
-      <input type="tel" id="mobile" placeholder="Mobile Number" required>
-    </div>
-
-    <div class="input-box">
-      <select id="course" required>
-        <option value="">Which Course Do You Want?</option>
-        <option>Usool-e-Hadees Course</option>
-        <option>Seerat-un-Nabi Course</option>
-        <option>Tajweed Course</option>
-        <option>Bahar e Shariat Course</option>
-<option>Alim/Alima Course</option>
-<option>Arabic Course</option>
-      </select>
-    </div>
-
-    <button type="submit" class="submit-btn">
-      Submit On WhatsApp
-    </button>
-
-  </form>
-</div>
-
-  </section>  <footer class="footer">
+  <footer class="footer">
     Designed For <span>Online Imam Ahmad Raza Academy</span>
-  </footer>  <script>
-    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+  </footer>
+
+  <script>
+
+    document.getElementById('registrationForm')
+    .addEventListener('submit', function(e){
+
       e.preventDefault();
 
       const name = document.getElementById('name').value;
@@ -269,13 +338,24 @@
       const mobile = document.getElementById('mobile').value;
       const course = document.getElementById('course').value;
 
-      const message = `📚 New Course Registration\n\n👤 Name: ${name}\n🎂 Date Of Birth: ${dob}\n🏙 City: ${city}\n📍 State: ${state}\n📱 Mobile Number: ${mobile}\n📖 Course: ${course}`;
+      const message =
+`📚 New Course Registration
 
-      const whatsappNumber = '918981245429';
+👤 Name: ${name}
+🎂 Date Of Birth: ${dob}
+🏙 City: ${city}
+📍 State: ${state}
+📱 Mobile Number: ${mobile}
+📖 Course: ${course}`;
 
-      const whatsappURL = `https://wa.me/918981245429?text=${encodeURIComponent(message)}`;
+      const whatsappURL =
+`https://wa.me/918981245429?text=${encodeURIComponent(message)}`;
 
       window.open(whatsappURL, '_blank');
+
     });
-  </script></body>
+
+  </script>
+
+</body>
 </html>
